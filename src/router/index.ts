@@ -1,22 +1,42 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    redirect: '/index'
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/index',
+    name: 'index',
+    component: () => import(/* webpackChunkName: "about" */ '../views/index.vue')
+  },
+  {
+    path: '/user',
+    name: 'User',
+    component: () => import(/* webpackChunkName: "about" */ '../views/User.vue')
+  },
+  {
+    path: '/goods',
+    name: 'Goods',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Goods.vue')
+  },
+  {
+    path: '/ingoods',
+    name: 'InGoods',
+    component: () => import(/* webpackChunkName: "about" */ '../views/InGoods.vue')
+  },
+  {
+    path: '/outgoods',
+    name: 'OutGoods',
+    component: () => import(/* webpackChunkName: "about" */ '../views/OutGoods.vue')
+  },
+  {
+    path: '/admin',
+    name: 'Admin',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Admin.vue')
   }
 ]
 
